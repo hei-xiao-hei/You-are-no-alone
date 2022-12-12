@@ -9,6 +9,8 @@ TagManager:
   - TeleportIgnore
   - ExcludeTeleport
   - Floor
+  - Toys
+  - Balls
   layers:
   - Default
   - TransparentFX
