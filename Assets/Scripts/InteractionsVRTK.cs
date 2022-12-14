@@ -26,13 +26,14 @@ public class InteractionsVRTK : VRTK_ControllerEvents
         if(gameobjecttype=="Balls")
         {
             //显示完成专注力训练UI
-            UIController.uiController.Clearace();
+            //UIController.uiController.Clearace();
         }
         else
         {
             //减少专注力值
             UIController.uiController.DeductConcentration();
         }
+        
     }
 
     // Update is called once per frame

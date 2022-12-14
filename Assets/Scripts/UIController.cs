@@ -11,6 +11,9 @@ public class UIController : MonoBehaviour
     public int scorces;//专注力分值
     [Header("通关UI")]
     public GameObject CleaanceUI;
+
+    //咋眼效果
+    public Animator CameraAwake;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,10 +45,27 @@ public class UIController : MonoBehaviour
     {
         scorces -= 10;
         Concentration.value=scorces;
+        /*if(scorces<=80&&scorces>50)
+        {
+            //调用改变呼吸和心跳的函数
+            GameManager.Instance.BreathAndHeart(0);
+        }
+        else */
+        if(scorces<=50)
+        {
+            GameManager.Instance.BreathAndHeart(1);
+        }
+        else if(scorces<=30)
+        {
+            GameManager.Instance.BreathAndHeart(2);
+            //闭上眼睛
+            CameraAwake.SetBool("isClose", true);
+        }
     }
     //通关UI
     public void Clearace()
     {
+
         CleaanceUI.SetActive(true);
     }
 }
